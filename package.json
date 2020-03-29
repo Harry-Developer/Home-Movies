@@ -1,0 +1,25 @@
+{
+  "name": "Home-Movies",
+  "version": "1.0.0",
+  "description": "Visual interface for selecting and viewing movies you have stored on a home network.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harry-Developer/Home-Movies.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harry-Developer/Home-Movies/issues"
+  },
+  "homepage": "https://github.com/Harry-Developer/Home-Movies#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
