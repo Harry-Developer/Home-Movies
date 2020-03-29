@@ -19,7 +19,9 @@
 
             <% for(var i = 0; i < totalMovies; i++) { %>
             <div class="card" style="width: 14rem;">
-                <img src="images/<%- movie[i].image %>" class="card-img-top" alt="...">
+                <a href="/movies/<%- movie[i].title %>">
+                    <img src="images/<%- movie[i].image %>" class="card-img-top" alt="...">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title"> <%- movie[i].title %> </h5>
                 </div>
