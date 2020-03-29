@@ -4,6 +4,7 @@ require('dotenv').config()
 
 //Routing
 const userRouting = require('./routes/user.js')
+const movieRouting = require('./routes/movies.js')
 
 const app = express()
 const port = process.env.PORT;
@@ -16,6 +17,7 @@ app.use(express.urlencoded())
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', userRouting)
+app.use('/movies', movieRouting)
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}!`)

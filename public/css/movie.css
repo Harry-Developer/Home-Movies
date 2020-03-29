@@ -1,0 +1,27 @@
+.film-selection {
+    width: 720px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.movie-details {
+    margin: 20px 20px;
+    color: rgb(255, 255, 255)
+}
+
+.movie-info-basic {
+    display: inline-flex;
+}
+
+.age-rating {
+    margin: 0px 20px;
+}
+
+.description {
+    width: 100%;
+}
+
+.movie-player {
+    width: 720px;
+    margin: 50px auto;
+}

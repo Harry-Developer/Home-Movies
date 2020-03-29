@@ -1,6 +1,5 @@
 const connection = require('./database')
 
-
 exports.getMovies = function(req, res) {
 
     let sql = "SELECT * FROM movies"
