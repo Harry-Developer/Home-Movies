@@ -1,4 +1,6 @@
 const express = require('express')
+const fs = require('fs')
+const path = require('path')
 
 require('dotenv').config()
 
@@ -18,6 +20,13 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/', userRouting)
 app.use('/movies', movieRouting)
+
+//Creates required folders for content
+if (!fs.existsSync(path.join(__dirname, '/public/movies'))) 
+    fs.mkdirSync(path.join(__dirname, '/public/movies'))
+
+if (!fs.existsSync(path.join(__dirname, '/public/images'))) 
+    fs.mkdirSync(path.join(__dirname, '/public/images'))
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}!`)

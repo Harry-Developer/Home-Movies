@@ -7,6 +7,12 @@ const path = require('path')
 
 exports.getMovies = function(req, res) {
 
+    if (!fs.existsSync(path.join(__dirname, '../public/movies'))) 
+        fs.mkdirSync(path.join(__dirname, '../public/movies'))
+
+    if (!fs.existsSync(path.join(__dirname, '../public/images'))) 
+        fs.mkdirSync(path.join(__dirname, '../public/images'))
+
     let sql = "SELECT * FROM movies"
     connection.query(sql, function(error, results, fields) {
         if(error) throw error
@@ -23,6 +29,7 @@ exports.uploadMovie = function(req, res) {
 
     var movieTitle = req.body.title;
 
+   
     fs.rename(
         path.join(__dirname, '../public/movies/latest-video.mp4'), 
         path.join(__dirname, '../public/movies/' + movieTitle + '.mp4'), 
