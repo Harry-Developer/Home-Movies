@@ -1,6 +1,10 @@
 # Home-Movies
 Visual interface for selecting and viewing movies you have stored on a home network.
 
+Future Work:
+  File format upload validation
+  Allow more file formats
+
 ## Install
 
 ### OMDb API
