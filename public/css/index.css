@@ -1,19 +1,9 @@
 .film-selection {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .card {
-    margin: 20px 0px;
-    background-color: rgb(43, 46, 46) !important;
-    border: 0 !important;
-}
-
-.card-body {
-    padding: 10px 0px !important;
-}
-
-.card-title {
-    color: rgb(255, 255, 255);
+    margin: 50px 26px 0px 26px;
 }
