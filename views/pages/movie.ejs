@@ -37,14 +37,11 @@
                     <p class="actors"> Actors: <%- movie.Actors %> </p>
                 </div>
             </div>
-
-            
-            
         </div>
 
         <div class="movie-player">
             <video width="720" height="480" controls>
-                <source src="../movies/example.mp4" type="video/mp4">
+                <source src="<%- file[0].file %>" type="video/mp4">
                 Your browser does not support the video tag.
             </video> 
         </div>
