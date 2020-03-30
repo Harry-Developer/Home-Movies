@@ -1,8 +1,22 @@
 const connection = require('./database')
 const axios = require('axios').default;
 
-exports.getMovie = function(req, res) {
 
+exports.getMovies = function(req, res) {
+
+    let sql = "SELECT * FROM movies"
+    connection.query(sql, function(error, results, fields) {
+        if(error) throw error
+
+        res.render(
+            '../views/pages/index.ejs', {
+            totalMovies: results.length,
+            movie: results
+        })
+    })
+}
+
+exports.getMovie = function(req, res) {
 
     const movieTitle = req.params.movieName
 
@@ -26,9 +40,5 @@ exports.getMovie = function(req, res) {
             console.log(error);
         });
     })
-
-
-
-
 
 }

@@ -27,5 +27,9 @@ router.post('/upload',
     userModel.uploadMovie
 )
 
+router.get('/delete/:movieid',
+    userModel.deleteMovie
+)
+
 
 module.exports = router;

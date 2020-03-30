@@ -10,6 +10,26 @@
 </head>
 <body>
 
+    <div class="modal" tabindex="-1" role="dialog" id="confirmation">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"> Delete Movie </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p> Are you sure? </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a class="btn btn-danger" href="/delete/<%- movie.Title %>"> Delete </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <%- include('../partials/header.ejs') %>
 
     <div class="container">
@@ -36,6 +56,10 @@
 
                     <p class="actors"> Actors: <%- movie.Actors %> </p>
                 </div>
+
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmation">
+                    Delete Movie
+                </button>
             </div>
         </div>
 

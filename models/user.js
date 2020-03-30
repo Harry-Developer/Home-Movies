@@ -19,7 +19,6 @@ exports.getMovies = function(req, res) {
     })
 }
 
-
 exports.uploadMovie = function(req, res) {
 
     var movieTitle = req.body.title;
@@ -61,4 +60,24 @@ var download = function(uri, filename, callback){
       request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
     });
 };
+
+exports.deleteMovie = function(req, res) {
+    var movieTitle = req.params.movieid
+
+    let sql = 'DELETE FROM movies WHERE title = ?'
+
+    connection.query(sql, [movieTitle], function(error, rows, fields) {
+        if(error) throw error;
+    })
+
+    try {
+        fs.unlinkSync(path.join(__dirname, '../public/movies/' + movieTitle + '.mp4'))
+
+        fs.unlinkSync(path.join(__dirname, '../public/images/' + movieTitle + '.png'))
+
+        res.redirect('/')
+    } catch(err) {
+        throw err;
+    }
+}
   
